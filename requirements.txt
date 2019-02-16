@@ -1,4 +1,4 @@
 pymongo
 flask
-kafka
-psycopg2
+kafka-python
+psycopg2-binary
