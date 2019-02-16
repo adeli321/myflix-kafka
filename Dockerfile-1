@@ -18,4 +18,4 @@ EXPOSE 8080
 # ENV NAME World
 
 # Run video.py when the container launches
-CMD ["python3", "flask_app.py"]
+# CMD ["python3", "flask_app.py"]
