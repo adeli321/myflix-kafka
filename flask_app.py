@@ -12,6 +12,10 @@ app = Flask(__name__)
 app.secret_key = b'_5-y4L"F4Q9z\n\x7ec]/'
 mongo_client = MongoClient('mongodb://restheart:R3ste4rt!@35.242.180.246:27017')
 
+
+
+
+
 # def get_mongo_consumer():
 #     mongo_consumer = KafkaConsumer(
 #                     'mongo-out', 
