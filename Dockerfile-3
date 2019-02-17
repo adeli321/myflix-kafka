@@ -21,4 +21,4 @@ EXPOSE 8080
 # ENV NAME World
 
 # Run video.py when the container launches
-# CMD ["python3", "postgres_register.py"]
+CMD ["python3", "postgres_register.py"]

@@ -71,7 +71,7 @@ def verify() -> 'html':
             return render_template('incorrect_login.html')
 
 @app.route('/register_user', methods = ['POST'])
-def regiser() -> 'html':
+def register() -> 'html':
     username = request.form['username']
     password = request.form['password']
     topic    = 'register'
