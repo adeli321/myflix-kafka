@@ -10,7 +10,8 @@ from kafka import KafkaConsumer, KafkaProducer
 
 app = Flask(__name__)
 app.secret_key = b'_5-y4L"F4Q9z\n\x7ec]/'
-mongo_client = MongoClient('mongodb://restheart:R3ste4rt!@35.242.180.246:27017')
+mongo_client   = MongoClient('mongodb://restheart:R3ste4rt!@35.242.180.246:27017')
+mongo_client_2 = MongoClient('mongodb://restheart:R3ste4rt!@35.189.72.90:27017')
 
 
 
@@ -100,6 +101,46 @@ def show_video() -> 'video':
         grid_out  = fs.open_download_stream_by_name(session['video_title'])
         contents  = grid_out.read()
         return Response(contents, mimetype='video/mp4')
+
+@app.route('/showvideo2', methods=['POST', 'GET'])
+def show_video_2() -> 'video':
+    if request.method == 'POST':
+        session['video_title'] = request.form['title']
+        videos_db = mongo_client_2.get_database('videos')
+        fs        = GridFSBucket(videos_db)
+        grid_out  = fs.open_download_stream_by_name(session['video_title'])
+        contents  = grid_out.read()
+        return Response(contents, mimetype='video/mp4')
+    elif request.method == 'GET':
+        videos_db = mongo_client_2.get_database('videos')
+        fs        = GridFSBucket(videos_db)
+        grid_out  = fs.open_download_stream_by_name(session['video_title'])
+        contents  = grid_out.read()
+        return Response(contents, mimetype='video/mp4')
+
+
+
+        # videos_db = mongo_client.get_database('videos')
+        # fs        = GridFSBucket(videos_db)
+        # grid_out  = fs.open_download_stream_by_name(session['video_title'])
+        # contents  = grid_out.read()
+        # return Response(contents, mimetype='video/mp4')
+
+
+######################
+# code to test in REPL
+# try:
+#     videos_db = mongo_client.get_database('videos')
+#     fs        = GridFSBucket(videos_db)
+#     grid_out  = fs.open_download_stream_by_name(video_title)
+#     contents  = grid_out.read()
+# except gridfs.errors.NoFile as err:
+#     videos_db = mongo_client_2.get_database('videos')
+#     fs        = GridFSBucket(videos_db)
+#     grid_out  = fs.open_download_stream_by_name(video_title)
+#     contents  = grid_out.read()
+
+
 
 
 # if request.method == 'POST':
