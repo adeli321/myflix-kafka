@@ -1,4 +1,4 @@
-pymongo
-flask
-kafka-python
-psycopg2-binary
+Flask==1.0.2
+kafka-python==1.4.4
+psycopg2-binary==2.7.6.1
+pymongo==3.7.2
