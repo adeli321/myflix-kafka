@@ -20,12 +20,12 @@ db_config = {'host': '35.234.143.12',
 
 postgres_login_consumer = KafkaConsumer(
                 'login',
-                bootstrap_servers=['35.246.41.186:9092'],
+                bootstrap_servers=['35.189.65.39:9092'],
                 value_deserializer=lambda value: json.loads(value))
 
 def get_postgres_producer():
     postgres_producer = KafkaProducer(
-                    bootstrap_servers=['35.246.41.186:9092'],
+                    bootstrap_servers=['35.189.65.39:9092'],
                     value_serializer=lambda value: json.dumps(value).encode())
     return postgres_producer
 

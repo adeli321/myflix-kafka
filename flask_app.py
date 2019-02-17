@@ -32,20 +32,20 @@ mongo_client = MongoClient('mongodb://restheart:R3ste4rt!@35.242.180.246:27017')
 def get_postgres_login_consumer():
     postgres_login_consumer = KafkaConsumer(
                 'login_response',
-                bootstrap_servers=['35.246.41.186:9092'],
+                bootstrap_servers=['35.189.65.39:9092'],
                 value_deserializer=lambda value: json.loads(value))
     return postgres_login_consumer
 
 def get_postgres_register_consumer():
     postgres_register_consumer = KafkaConsumer(
                 'register_response',
-                bootstrap_servers=['35.246.41.186:9092'],
+                bootstrap_servers=['35.189.65.39:9092'],
                 value_deserializer=lambda value: json.loads(value))
     return postgres_register_consumer
 
 def get_postgres_producer():
     postgres_producer = KafkaProducer(
-                bootstrap_servers=['35.246.41.186:9092'],
+                bootstrap_servers=['35.189.65.39:9092'],
                 value_serializer=lambda value: json.dumps(value).encode())
     return postgres_producer
 
