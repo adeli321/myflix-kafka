@@ -13,6 +13,8 @@ app.secret_key = b'_5-y4L"F4Q9z\n\x7ec]/'
 mongo_client   = MongoClient('mongodb://restheart:R3ste4rt!@35.242.180.246:27017')
 mongo_client_2 = MongoClient('mongodb://restheart:R3ste4rt!@35.189.72.90:27017')
 
+
+
 def get_postgres_login_consumer():
     postgres_login_consumer = KafkaConsumer(
                 'login_response',
