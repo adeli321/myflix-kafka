@@ -6,9 +6,9 @@ from use_db import UseDatabase
 from kafka import KafkaConsumer, KafkaProducer
 
 db_config = {'host': '35.234.143.12',
-                            'user': 'postgres',
-                            'password': 'hellopostgres',
-                            'database': 'postgres'}
+            'user': 'postgres',
+            'password': 'hellopostgres',
+            'database': 'postgres'}
 
 postgres_credit_check_consumer = KafkaConsumer(
                 'credit-check',
