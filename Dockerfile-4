@@ -1,0 +1,24 @@
+# Use an official Python runtime as a parent image
+FROM python:3.7.2-alpine3.9 AS pycreditcheck
+
+# Set the working directory to /app
+WORKDIR /myflixKafka
+
+# Copy the current directory contents into the container at /app
+COPY . /myflixKafka
+
+# Install any needed packages specified in requirements.txt
+RUN \
+ apk add --no-cache python3 postgresql-libs && \
+ apk add --no-cache --virtual .build-deps gcc python3-dev musl-dev postgresql-dev && \
+ python3 -m pip install -r requirements.txt --no-cache-dir && \
+ apk --purge del .build-deps
+
+# Make port 80 available to the world outside this container
+EXPOSE 8080
+
+# Define environment variable
+# ENV NAME World
+
+# Run video.py when the container launches
+CMD ["python3", "credit_check.py"]

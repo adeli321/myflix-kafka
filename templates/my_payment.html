@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="static/hf.css" rel="stylesheet" id="bootstrap-css">
+    <div class="main">
+</head>
+<body>
+    <div class="container">
+        <center>
+        <h1><font color="red">Please enter your credit card details.</font></h1>
+        <br>
+        <form action="/credit_insert" method="POST">
+        <p><span class="fa fa-user"></span><input name="card_name" type="text"  Placeholder="Card Holder's Name" required></p>
+        <br>
+        <p><span class="fa fa-user"></span><input name="card_number" type="text"  Placeholder="Card Number" required></p>
+        <br>
+        <p><span class="fa fa-user"></span><input name="expiry_month" type="text"  Placeholder="Card Expire Month" required></p>
+        <br>
+        <p><span class="fa fa-user"></span><input name="expiry_year" type="text"  Placeholder="Card Expire Year" required></p>
+        <br>
+        <p><span class="fa fa-user"></span><input name="card_cvv" type="text"  Placeholder="Card CVV Number" required></p>
+        <br>
+        <span style="width:50%; text-align:center;  display: inline-block;"><input type="submit" value="Submit"></span>
+        </form>
+        
+        <!-- <form method="get" action="/profile">
+            <button type="submit">Back to login page</button>
+        </form> -->
+        </center>
+    </div>
+</body>
+</html>
