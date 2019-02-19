@@ -13,3 +13,5 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+# docker-compose file reference: https://github.com/wurstmeister/kafka-docker/blob/master/docker-compose.yml

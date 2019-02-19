@@ -2,9 +2,6 @@
 <html>
     <head>
         <link href="static/hf.css" rel="stylesheet" id="bootstrap-css">
-        <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
         <div class="main">
     </head>
     <body>
@@ -14,10 +11,9 @@
             <div id="login">
                 <form action="/verify_credentials" method="POST">
                 <fieldset class="clearfix">
-                    <p ><span class="fa fa-user"></span><input name="username" type="text"  Placeholder="Username" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
-                    <p><span class="fa fa-lock"></span><input name="password" type="password"  Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+                    <p ><span class="fa fa-user"></span><input name="username" type="text"  Placeholder="Username" required></p>
+                    <p><span class="fa fa-lock"></span><input name="password" type="password"  Placeholder="Password" required></p> 
                     <div>
-                        <!-- <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="#">Register new account</a></span> -->
                         <span style="width:48%; text-align:left;  display: inline-block;"><input type="submit" value="Register account" formaction="/register_user"></span>
                         <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Sign In"></span>
                      </div>
@@ -36,3 +32,5 @@
 </div>  
 </body>
 </html>
+
+<!-- HTML reference: https://bootsnipp.com/snippets/AlkBV -->

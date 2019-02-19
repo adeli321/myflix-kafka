@@ -17,8 +17,5 @@ RUN \
 # Make port 80 available to the world outside this container
 EXPOSE 8080
 
-# Define environment variable
-# ENV NAME World
-
-# Run video.py when the container launches
+# Run postgres_register.py when the container launches
 CMD ["python3", "postgres_register.py"]
