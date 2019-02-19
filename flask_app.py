@@ -162,3 +162,7 @@ def show_video_2() -> 'video':
 
 if __name__ == '__main__':
     app.run(debug=True, threaded=True, host='0.0.0.0', port=8080)
+
+# kafka-python documentation reference: https://pypi.org/project/kafka-python/
+# PyMongo documentation reference: https://api.mongodb.com/python/current/
+# gridfs documentation reference: https://api.mongodb.com/python/current/api/gridfs/index.html

@@ -6,13 +6,6 @@ import psycopg2
 from use_db import UseDatabase
 from kafka import KafkaConsumer, KafkaProducer
 
-# conn = psycopg2.connect(host='35.234.143.12',
-#                             user='postgres',
-#                             password='hellopostgres',
-#                             database='postgres')
-# cursor = conn.cursor()
-# db_config = ("host='35.234.143.12', user='postgres', password='hellopostgres', database='postgres'")
-
 db_config = {'host': '35.234.143.12',
             'user': 'postgres',
             'password': 'hellopostgres',
