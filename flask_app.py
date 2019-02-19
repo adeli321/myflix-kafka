@@ -8,7 +8,7 @@ from gridfs import GridFSBucket
 from flask import Flask, render_template, request, url_for, Response, redirect, session
 from kafka import KafkaConsumer, KafkaProducer
 
-app = Flask(__name__)
+app            = Flask(__name__)
 app.secret_key = b'_5-y4L"F4Q9z\n\x7ec]/'
 mongo_client   = MongoClient('mongodb://restheart:R3ste4rt!@35.242.180.246:27017')
 mongo_client_2 = MongoClient('mongodb://restheart:R3ste4rt!@35.189.72.90:27017')
@@ -55,14 +55,6 @@ def login() -> 'html':
 @app.route('/homepage')
 def homepage() -> 'html':
     return render_template('image_test.html')
-
-@app.route('/testcarousel')
-def carousel() -> 'html':
-    return render_template('video_carousel.html')
-
-@app.route('/listvideos')
-def listvideos() -> 'html':
-    return render_template('list_videos.html')
 
 @app.route('/verify_credentials', methods=['POST'])
 def verify() -> 'html':
