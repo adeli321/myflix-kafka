@@ -45,7 +45,7 @@ the front-end, login, register, credit-check, and credit-insert services
     a. `docker run -d -p 5432:5432 --name postgres postgres`
   3. create the authentication and credit tables in psql \
     a. `docker exec -it postgres psql -U postgres` \
-    b. in psql command line run commands: \
+    b. in psql command line run commands: 
       1. `CREATE TABLE authentication(username varchar(50), password varchar(50));`
       2. `CREATE TABLE credit(username varchar(50), card_name varchar(50),
       card_number bigint, expiry_month integer, expiry_year integer, card_cvv integer);`
