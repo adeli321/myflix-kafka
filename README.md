@@ -10,7 +10,7 @@ Jenkins - provides automated build setup to launch when the dev branch of myflix
 Ubuntu/python - instance which has a container that runs 5 services in 5 python containers: the flask app providing 
 the front-end, login, register, credit-check, and credit-insert services
 
-TO launch the kafka service:
+**TO launch the kafka service:**
   1. spin up a gcloud instance (container-optimised or coreos)
   2. create an alias to run the docker-compose command
     a. `alias docker-compose='docker run --rm` \
@@ -21,7 +21,7 @@ TO launch the kafka service:
   3. run docker-compose with the docker-compose.yml file provided in the myflixKafka repo
     a. `docker-compose up -d`
 
-TO launch the MongoDB instance:
+**TO launch the MongoDB instance:**
   1. spin up a gcloud instance (coreos)
   2. create MongoDB docker container
     a. `docker run -d -p 8080:8080 -e MONGO_INITDB_ROOT_USERNAME='restheart'` \
@@ -36,10 +36,10 @@ TO launch the MongoDB instance:
   5. insert video file into MongoDB/GridFS storage
     a. `docker exec -it [CONTAINER_NAME] mongofiles -d '[DB_NAME]' put [FILE_NAME]`
     
-TO launch the MongoDB-2 instance:
+**TO launch the MongoDB-2 instance:**
   1. Repeat steps for MongoDB instance and upload a different set of videos
   
-TO launch the PostgreSQL instance:
+**TO launch the PostgreSQL instance:**
   1. spin up a gcloud instance (coreos)
   2. create PostgreSQL docker container
     a. `docker run -d -p 5432:5432 --name postgres postgres`
@@ -50,14 +50,14 @@ TO launch the PostgreSQL instance:
       2. `CREATE TABLE credit(username varchar(50), card_name varchar(50),
       card_number bigint, expiry_month integer, expiry_year integer, card_cvv integer);`
       
-TO launch the Jenkins instance:
+**TO launch the Jenkins instance:**
   1. spin up a gcloud instance (coreos)
   2. create Jenkins docker container
     a. `docker run -d -p 50000:50000 -p 8080:8080 --name jenkins jenkins `
   3. follow steps to create a gcloud image and set up github webhook and build steps
     a. https://cloud.google.com/solutions/using-jenkins-for-distributed-builds-on-compute-engine
     
-TO launch the Ubuntu/python instance:
+**TO launch the Ubuntu/python instance:**
   1. jenkins should now take care of spinning up the gcloud instance
   2. insert these commands in the Build - Execute shell window in Jenkins console
     a. `sudo rm -rf myflixKafka` \
