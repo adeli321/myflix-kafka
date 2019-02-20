@@ -13,10 +13,10 @@ the front-end, login, register, credit-check, and credit-insert services
 TO launch the kafka service:
   1. spin up a gcloud instance (container-optimised or coreos)
   2. create an alias to run the docker-compose command
-    a. ```alias docker-compose='docker run --rm \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v "$PWD:/rootfs/$PWD" \
-    -w="/rootfs/$PWD" \
+    a. ```alias docker-compose='docker run --rm \ <br />
+    -v /var/run/docker.sock:/var/run/docker.sock \ <br />
+    -v "$PWD:/rootfs/$PWD" \ <br />
+    -w="/rootfs/$PWD" \ <br />
     docker/compose:1.13.0'```
   3. run docker-compose with the docker-compose.yml file provided in the myflixKafka repo
     a. `docker-compose up -d`
