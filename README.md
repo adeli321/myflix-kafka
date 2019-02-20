@@ -12,28 +12,28 @@ the front-end, login, register, credit-check, and credit-insert services
 
 **TO launch the kafka service:**
   1. spin up a gcloud instance (container-optimised or coreos)
-  2. create an alias to run the docker-compose command
+  2. create an alias to run the docker-compose command \
     a. `alias docker-compose='docker run --rm` \
     `-v /var/run/docker.sock:/var/run/docker.sock` \
     `-v "$PWD:/rootfs/$PWD"` \
     `-w="/rootfs/$PWD"` \
     `docker/compose:1.13.0'`
-  3. run docker-compose with the docker-compose.yml file provided in the myflixKafka repo
+  3. run docker-compose with the docker-compose.yml file provided in the myflixKafka repo \
     a. `docker-compose up -d`
 
 **TO launch the MongoDB instance:**
   1. spin up a gcloud instance (coreos)
-  2. create MongoDB docker container
+  2. create MongoDB docker container \
     a. `docker run -d -p 8080:8080 -e MONGO_INITDB_ROOT_USERNAME='restheart'` \
     `-e MONGO_INITDB_ROOT_PASSWORD='R3ste4rt!'`  \
     `--name mongodb -v "$PWD/data:/data/db"` \
     `-v "$PWD/import:/home" mongo:3.6` \
     `--bind_ip_all --auth`
-  3. migrate videos you want to store to MongoDB instance (either through Github or gcloud scp command):
+  3. migrate videos you want to store to MongoDB instance (either through Github or gcloud scp command): \
     a. `gcloud compute scp [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/`
-  4. transfer video file to MongoDB container:
+  4. transfer video file to MongoDB container: \
     a. `docker cp [FILENAME] [CONTAINER_ID]:/[NAME_GIVEN_TOFILE]`
-  5. insert video file into MongoDB/GridFS storage
+  5. insert video file into MongoDB/GridFS storage \
     a. `docker exec -it [CONTAINER_NAME] mongofiles -d '[DB_NAME]' put [FILE_NAME]`
     
 **TO launch the MongoDB-2 instance:**
@@ -41,25 +41,25 @@ the front-end, login, register, credit-check, and credit-insert services
   
 **TO launch the PostgreSQL instance:**
   1. spin up a gcloud instance (coreos)
-  2. create PostgreSQL docker container
+  2. create PostgreSQL docker container \
     a. `docker run -d -p 5432:5432 --name postgres postgres`
-  3. create the authentication and credit tables in psql
-    a. `docker exec -it postgres psql -U postgres`
-    b. in psql command line run commands:
+  3. create the authentication and credit tables in psql \
+    a. `docker exec -it postgres psql -U postgres` \
+    b. in psql command line run commands: \
       1. `CREATE TABLE authentication(username varchar(50), password varchar(50));`
       2. `CREATE TABLE credit(username varchar(50), card_name varchar(50),
       card_number bigint, expiry_month integer, expiry_year integer, card_cvv integer);`
       
 **TO launch the Jenkins instance:**
   1. spin up a gcloud instance (coreos)
-  2. create Jenkins docker container
+  2. create Jenkins docker container \
     a. `docker run -d -p 50000:50000 -p 8080:8080 --name jenkins jenkins `
-  3. follow steps to create a gcloud image and set up github webhook and build steps
+  3. follow steps to create a gcloud image and set up github webhook and build steps \
     a. https://cloud.google.com/solutions/using-jenkins-for-distributed-builds-on-compute-engine
     
 **TO launch the Ubuntu/python instance:**
   1. jenkins should now take care of spinning up the gcloud instance
-  2. insert these commands in the Build - Execute shell window in Jenkins console
+  2. insert these commands in the Build - Execute shell window in Jenkins console \
     a. `sudo rm -rf myflixKafka` \
         `git clone https://github.com/adeli321/myflixKafka` \ 
         `sudo apt-get update` \ 
