@@ -24,11 +24,11 @@ TO launch the kafka service:
 TO launch the MongoDB instance:
   1. spin up a gcloud instance (coreos)
   2. create MongoDB docker container
-    a. ```docker run -d -p 8080:8080 -e MONGO_INITDB_ROOT_USERNAME='restheart' \
-    -e MONGO_INITDB_ROOT_PASSWORD='R3ste4rt!'  \
-    --name mongodb -v "$PWD/data:/data/db" \
-    -v "$PWD/import:/home" mongo:3.6 \
-    --bind_ip_all --auth```
+    a. `docker run -d -p 8080:8080 -e MONGO_INITDB_ROOT_USERNAME='restheart'` \
+    `-e MONGO_INITDB_ROOT_PASSWORD='R3ste4rt!'`  \
+    `--name mongodb -v "$PWD/data:/data/db"` \
+    `-v "$PWD/import:/home" mongo:3.6` \
+    `--bind_ip_all --auth`
   3. migrate videos you want to store to MongoDB instance (either through Github or gcloud scp command):
     a. `gcloud compute scp [LOCAL_FILE_PATH] [INSTANCE_NAME]:~/`
   4. transfer video file to MongoDB container:
@@ -47,7 +47,7 @@ TO launch the PostgreSQL instance:
     a. `docker exec -it postgres psql -U postgres`
     b. in psql command line run commands:
       1. `CREATE TABLE authentication(username varchar(50), password varchar(50));`
-      2. `CREATE TABLE credit(username varchar(50), card_name varchar(50), \
+      2. `CREATE TABLE credit(username varchar(50), card_name varchar(50),
       card_number bigint, expiry_month integer, expiry_year integer, card_cvv integer);`
       
 TO launch the Jenkins instance:
@@ -60,23 +60,23 @@ TO launch the Jenkins instance:
 TO launch the Ubuntu/python instance:
   1. jenkins should now take care of spinning up the gcloud instance
   2. insert these commands in the Build - Execute shell window in Jenkins console
-    a. ```sudo rm -rf myflixKafka  
-        git clone https://github.com/adeli321/myflixKafka  
-        sudo apt-get update  
-        sudo apt-get install -y \  
-            apt-transport-https \  
-            ca-certificates \
-            curl \
-            gnupg-agent \
-            software-properties-common
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-        sudo add-apt-repository \
-           "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-           $(lsb_release -cs) \
-           stable"
-        sudo apt-get update
-        sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-        ./Buildfile```
+    a. `sudo rm -rf myflixKafka` \
+        `git clone https://github.com/adeli321/myflixKafka` \ 
+        `sudo apt-get update` \ 
+        `sudo apt-get install -y` \
+            `apt-transport-https` \
+            `ca-certificates` \
+            `curl` \
+            `gnupg-agent` \
+            `software-properties-common` \
+        `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`\
+        `sudo add-apt-repository` \
+           `"deb [arch=amd64] https://download.docker.com/linux/ubuntu` \
+           `$(lsb_release -cs)` \
+           `stable"`\
+        `sudo apt-get update` \
+        `sudo apt-get install -y docker-ce docker-ce-cli containerd.io` \
+        `./Buildfile`
         
 Now all of the services should be set up.
 The only thing left to do is open up the IPs and ports on gcloud.
