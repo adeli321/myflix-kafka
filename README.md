@@ -81,4 +81,4 @@ TO launch the Ubuntu/python instance:
 Now all of the services should be set up.
 The only thing left to do is open up the IPs and ports on gcloud.
 Necessary ports to open: 8080, 5432, 27017, 2181, 9092
-
+ 
