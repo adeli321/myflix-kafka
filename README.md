@@ -60,11 +60,11 @@ TO launch the Jenkins instance:
 TO launch the Ubuntu/python instance:
   1. jenkins should now take care of spinning up the gcloud instance
   2. insert these commands in the Build - Execute shell window in Jenkins console
-    a. ```sudo rm -rf myflixKafka
-        git clone https://github.com/adeli321/myflixKafka
-        sudo apt-get update
-        sudo apt-get install -y \
-            apt-transport-https \
+    a. ```sudo rm -rf myflixKafka  
+        git clone https://github.com/adeli321/myflixKafka  
+        sudo apt-get update  
+        sudo apt-get install -y \  
+            apt-transport-https \  
             ca-certificates \
             curl \
             gnupg-agent \
