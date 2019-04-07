@@ -4,7 +4,7 @@ Video Streaming service utilizing Kafka for login functionality
 To run this video streaming service, 6 gcloud instances are required. Each one has a specific use: \
 Kafka - provides the kafka broker to manage the login, register, credit-check, and credit-insert services \
 MongoDB - provides video storage \
-MongoDB-2 - provides video storage for additional videos \
+MongoDB-2 - provides video storage for additional videos (this additional Mongo store was added just to show that I could use multiple video stores) In practice I would only use one. \
 PostgreSQL - provides SQL database for login, register, credit-check, and credit-insert services \
 Jenkins - provides automated build setup to launch when the dev branch of myflixKafka repo is updated \
 Ubuntu/python - instance which has a container that runs 5 services in 5 python containers: the flask app providing 
